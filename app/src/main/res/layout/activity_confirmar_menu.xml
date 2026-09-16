@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/btnVolver"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_flecha_izquierda"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Confirmar menú"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#38352E"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_calendario"
+                android:background="@drawable/bg_circulo_amarillo"
+                android:padding="20dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Asignar este menú?"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:layout_marginTop="18dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:layout_marginTop="22dp">
+
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:src="@drawable/pollo"
+                    android:padding="25dp"
+                    android:background="@drawable/bg_card_amarilla"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pollo guisado"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#38352E"/>
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="32dp"
+                        android:gravity="center"
+                        android:text="Almuerzo"
+                        android:textSize="11sp"
+                        android:textColor="#38352E"
+                        android:background="@drawable/bg_boton_amarillo"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Fecha                 Viernes 22 de agosto"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:textColor="#38352E"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Estudiantes                         120"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:textColor="#38352E"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Las manipuladoras podrán ver el menú asignado y las cantidades a preparar."
+                android:textSize="13sp"
+                android:textColor="#66635B"
+                android:gravity="center_vertical"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="CANCELAR"
+            android:textStyle="bold"
+            android:textColor="#38352E"
+            android:background="@drawable/bg_boton_outline"/>
+
+        <TextView
+            android:id="@+id/btnConfirmar"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="CONFIRMAR"
+            android:textStyle="bold"
+            android:textColor="#38352E"
+            android:background="@drawable/bg_boton_amarillo"
+            android:layout_marginStart="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

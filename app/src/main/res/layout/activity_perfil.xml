@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F8F8">
+
+    <!-- ENCABEZADO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+
+        android:gravity="center"
+        android:background="#FFD83D"
+        android:padding="20dp">
+
+        <!-- FOTO DE PERFIL -->
+        <ImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_perfil"
+            android:background="@drawable/bg_circulo_blanco"
+            android:padding="12dp"
+            android:contentDescription="Foto de perfil"/>
+
+        <TextView
+            android:id="@+id/tvNombrePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="María López"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#38352E"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvRolPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Manipuladora de alimentos"
+            android:textSize="13sp"
+            android:textColor="#38352E"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+
+    <!-- CONTENIDO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Información personal"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- NOMBRE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_tarjeta_blanca"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre completo"
+                    android:textSize="12sp"
+                    android:textColor="#777777"/>
+
+                <TextView
+                    android:id="@+id/tvNombreCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="María López"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#38352E"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+
+            <!-- CORREO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_tarjeta_blanca"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo electrónico"
+                    android:textSize="12sp"
+                    android:textColor="#777777"/>
+
+                <TextView
+                    android:id="@+id/tvCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="maria@ejemplo.com"
+                    android:textSize="16sp"
+                    android:textColor="#38352E"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+
+            <!-- TELEFONO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_tarjeta_blanca"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono"
+                    android:textSize="12sp"
+                    android:textColor="#777777"/>
+
+                <TextView
+                    android:id="@+id/tvTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300 000 0000"
+                    android:textSize="16sp"
+                    android:textColor="#38352E"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+
+            <!-- SECCIÓN CUENTA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuenta"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
+
+
+            <!-- CAMBIAR CONTRASEÑA -->
+            <TextView
+                android:id="@+id/btnCambiarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:text="Cambiar contraseña"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:background="@drawable/bg_tarjeta_blanca"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+
+            <!-- CERRAR SESIÓN -->
+            <TextView
+                android:id="@+id/btnCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:text="Cerrar sesión"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_boton_amarillo"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!-- BARRA INFERIOR -->
+    <include
+        layout="@layout/layout_barra_inferior"/>
+
+</LinearLayout>

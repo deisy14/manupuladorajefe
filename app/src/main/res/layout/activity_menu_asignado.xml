@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#38352E">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_check"
+            android:background="@drawable/bg_circulo_amarillo"
+            android:padding="20dp"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Menú asignado!"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"/>
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="190dp"
+                android:src="@drawable/pollo"
+                android:background="@drawable/bg_card"
+                android:padding="65dp"
+                android:layout_marginTop="18dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pollo guisado"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:layout_marginTop="12dp"/>
+
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="Almuerzo"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:background="@drawable/bg_boton_amarillo"
+                android:layout_marginTop="7dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Viernes 22 de agosto\n120 estudiantes"
+                android:textAlignment="center"
+                android:textSize="13sp"
+                android:textColor="#66635B"
+                android:layout_marginTop="15dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="Las manipuladoras ya pueden consultar el menú asignado."
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="13sp"
+                android:textColor="#6C5C20"
+                android:background="@drawable/bg_card_amarilla"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:id="@+id/btnVerPreparaciones"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:text="VER PREPARACIONES"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#38352E"
+                android:background="@drawable/bg_boton_amarillo"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <include
+        layout="@layout/layout_barra_inferior"/>
+
+</LinearLayout>

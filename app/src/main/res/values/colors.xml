@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="AmarilloP">#F6C800</color>
+    <color name="Amarilloc">#FFF4B8</color>
+    <color name="crema">#FFFDF5</color>
+    <color name="GRISOS">#38352E</color>
+    <color name="GRISTEX">#66635B</color>
+    <color name="GRISCLARO">#E9E7DF</color>
+    <color name="VERDE">#68B84A</color>
+    <color name="ROJOSUAVE">#E56B6F</color>
+</resources>

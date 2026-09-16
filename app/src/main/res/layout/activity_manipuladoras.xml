@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="Manipuladoras"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#38352E"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_card"
+        android:layout_marginHorizontal="18dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Hoy"
+            android:textStyle="bold"
+            android:textColor="#38352E"
+            android:background="@drawable/bg_boton_amarillo"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Historial"
+            android:textColor="#38352E"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="Viernes 22 de agosto"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#66635B"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+
+            <!-- MANIPULADORA 1 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:src="@drawable/ic_manipuladoras"
+                    android:background="@drawable/bg_card_amarilla"
+                    android:padding="14dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="María López"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#38352E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarea asignada"
+                        android:textSize="11sp"
+                        android:textColor="#77746B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preparar arroz"
+                        android:textSize="12sp"
+                        android:textColor="#38352E"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="● En preparación"
+                    android:textSize="10sp"
+                    android:textColor="#8A7200"
+                    android:background="@drawable/bg_estado_preparacion"/>
+
+            </LinearLayout>
+
+
+            <!-- MANIPULADORA 2 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:src="@drawable/ic_manipuladoras"
+                    android:background="@drawable/bg_card_amarilla"
+                    android:padding="14dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carolina Ruiz"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#38352E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarea asignada"
+                        android:textSize="11sp"
+                        android:textColor="#77746B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preparar ensalada"
+                        android:textSize="12sp"
+                        android:textColor="#38352E"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="● Pendiente"
+                    android:textSize="10sp"
+                    android:textColor="#77746B"
+                    android:background="@drawable/bg_estado_pendiente"/>
+
+            </LinearLayout>
+
+
+            <!-- MANIPULADORA 3 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_card"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:src="@drawable/ic_manipuladoras"
+                    android:background="@drawable/bg_card_amarilla"
+                    android:padding="14dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luisa Fernández"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#38352E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarea asignada"
+                        android:textSize="11sp"
+                        android:textColor="#77746B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preparar bebida"
+                        android:textSize="12sp"
+                        android:textColor="#38352E"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="Completado"
+                    android:textSize="10sp"
+                    android:textColor="#4D9135"
+                    android:background="@drawable/bg_estado_completado"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/btnAsignarTareas"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:text="ASIGNAR TAREAS"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:background="@drawable/bg_boton_amarillo"
+                android:layout_marginTop="18dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <include
+        layout="@layout/layout_barra_inferior"/>
+
+</LinearLayout>
