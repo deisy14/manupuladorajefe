@@ -2,10 +2,16 @@ package com.example.manipuladoraj
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.manipuladoraj.api.RetrofitClient
 import com.example.manipuladoraj.databinding.ActivityMenuDiarioBinding
+import com.example.manipuladoraj.model.MenuPae
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MenuDiarioActivity : AppCompatActivity() {
 
@@ -41,6 +47,50 @@ class MenuDiarioActivity : AppCompatActivity() {
         configurarCarrusel()
         configurarBarraInferior()
         configurarNotificacion()
+
+        // Llamada a la API de menús agregada aquí
+        cargarMenusRemotos()
+    }
+
+    // ---------------------------------------------------------
+    // CONSUMO DE LA API (MENÚS)
+    // ---------------------------------------------------------
+
+    private fun cargarMenusRemotos() {
+        RetrofitClient.apiService.obtenerMenus()
+            .enqueue(object : Callback<List<MenuPae>> {
+                override fun onResponse(
+                    call: Call<List<MenuPae>>,
+                    response: Response<List<MenuPae>>
+                ) {
+                    if (response.isSuccessful) {
+                        val listaMenus = response.body()
+                        Log.d("API_MENUS", "Menús recibidos: $listaMenus")
+
+                        Toast.makeText(
+                            this@MenuDiarioActivity,
+                            "Menús cargados: ${listaMenus?.size ?: 0}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Log.e("API_MENUS", "Error HTTP: ${response.code()}")
+                        Toast.makeText(
+                            this@MenuDiarioActivity,
+                            "Error al cargar menús",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<List<MenuPae>>, t: Throwable) {
+                    Log.e("API_MENUS", "Error de conexión: ${t.message}", t)
+                    Toast.makeText(
+                        this@MenuDiarioActivity,
+                        "Error de conexión con el servidor",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
     }
 
     // ---------------------------------------------------------
@@ -141,10 +191,7 @@ class MenuDiarioActivity : AppCompatActivity() {
     private fun configurarNotificacion() {
 
         binding.btnNotificacion.setOnClickListener {
-
             // Por ahora no abre otra pantalla.
-            // Aquí posteriormente podemos colocar
-            // la pantalla de notificaciones.
         }
     }
 
@@ -155,12 +202,10 @@ class MenuDiarioActivity : AppCompatActivity() {
     private fun configurarBarraInferior() {
 
         findViewById<View>(R.id.navInicio).setOnClickListener {
-
             // Ya estamos en Inicio
         }
 
         findViewById<View>(R.id.navInventario).setOnClickListener {
-
             startActivity(
                 Intent(
                     this,
@@ -170,7 +215,6 @@ class MenuDiarioActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPreparaciones).setOnClickListener {
-
             startActivity(
                 Intent(
                     this,
@@ -180,7 +224,6 @@ class MenuDiarioActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navManipuladoras).setOnClickListener {
-
             startActivity(
                 Intent(
                     this,
@@ -190,7 +233,6 @@ class MenuDiarioActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
-
             // Pendiente de crear la pantalla Perfil
         }
     }

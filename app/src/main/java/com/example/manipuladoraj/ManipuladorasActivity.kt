@@ -35,10 +35,6 @@ class ManipuladorasActivity : AppCompatActivity() {
         }
 
 
-        // =========================
-        // INVENTARIO
-        // =========================
-
         findViewById<View>(R.id.navInventario).setOnClickListener {
 
             val intent = Intent(
@@ -49,10 +45,6 @@ class ManipuladorasActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        // =========================
-        // PREPARACIONES
-        // =========================
 
         findViewById<View>(R.id.navPreparaciones).setOnClickListener {
 
@@ -65,19 +57,12 @@ class ManipuladorasActivity : AppCompatActivity() {
         }
 
 
-        // =========================
-        // MANIPULADORAS
-        // =========================
 
         findViewById<View>(R.id.navManipuladoras).setOnClickListener {
 
             // Ya estamos en esta pantalla
         }
 
-
-        // =========================
-        // PERFIL
-        // =========================
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
 
