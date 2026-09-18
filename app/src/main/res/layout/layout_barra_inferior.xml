@@ -1,149 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/barraInferior"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="78dp"
-    android:orientation="horizontal"
-    android:background="#FFFFFF"
-    android:elevation="10dp"
-    android:paddingTop="7dp"
-    android:paddingBottom="5dp">
-
-    <!-- INICIO -->
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="12dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:strokeColor="#F6C800"
+    app:strokeWidth="1.5dp">
 
     <LinearLayout
-        android:id="@+id/navInicio"
-        android:layout_width="0dp"
+        android:id="@+id/barraInferior"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingTop="7dp"
+        android:paddingBottom="5dp">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_inicio"
-            android:contentDescription="Inicio"/>
+        <!-- INICIO -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inicio"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:textColor="#38352E"
-            android:layout_marginTop="4dp"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_inicio"
+                android:contentDescription="Inicio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+        <!-- DIVISOR 1 -->
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:background="#F6C800"/>
+
+
+        <!-- INVENTARIO -->
+        <LinearLayout
+            android:id="@+id/navInventario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_inventario"
+                android:contentDescription="Inventario"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventario"
+                android:textSize="11sp"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+        <!-- DIVISOR 2 -->
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:background="#F6C800"/>
+
+
+        <!-- PREPARACIONES -->
+        <LinearLayout
+            android:id="@+id/navPreparaciones"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_preparaciones"
+                android:contentDescription="Preparaciones"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preparaciones"
+                android:textSize="9.5sp"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+        <!-- DIVISOR 3 -->
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:background="#F6C800"/>
+
+
+        <!-- MANIPULADORAS -->
+        <LinearLayout
+            android:id="@+id/navManipuladoras"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_manipuladoras"
+                android:contentDescription="Manipuladoras"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manipuladoras"
+                android:textSize="9.5sp"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+        <!-- DIVISOR 4 -->
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:background="#F6C800"/>
+
+
+        <!-- PERFIL -->
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_perfil"
+                android:contentDescription="Perfil"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="11sp"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
-    <!-- INVENTARIO -->
-
-    <LinearLayout
-        android:id="@+id/navInventario"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_inventario"
-            android:contentDescription="Inventario"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inventario"
-            android:textSize="11sp"
-            android:textColor="#38352E"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
-
-
-    <!-- PREPARACIONES -->
-
-    <LinearLayout
-        android:id="@+id/navPreparaciones"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_preparaciones"
-            android:contentDescription="Preparaciones"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preparaciones"
-            android:textSize="10sp"
-            android:textColor="#38352E"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
-
-
-    <!-- MANIPULADORAS -->
-
-    <LinearLayout
-        android:id="@+id/navManipuladoras"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_manipuladoras"
-            android:contentDescription="Manipuladoras"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manipuladoras"
-            android:textSize="10sp"
-            android:textColor="#38352E"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
-
-
-    <!-- PERFIL -->
-
-    <LinearLayout
-        android:id="@+id/navPerfil"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_perfil"
-            android:contentDescription="Perfil"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:textSize="11sp"
-            android:textColor="#38352E"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
