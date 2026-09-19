@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFDF5">
-
 
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +15,6 @@
         android:textStyle="bold"
         android:textColor="#38352E"/>
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -27,9 +24,7 @@
         android:textSize="13sp"
         android:textColor="#77746B"/>
 
-
     <!-- TABS -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -58,125 +53,13 @@
 
     </LinearLayout>
 
-
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerInventario"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="18dp">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="Granos y no perecederos"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#38352E"
-                android:gravity="center_vertical"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Arroz                                  25 kg"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Frijol                                  18 kg"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"
-                android:layout_marginTop="7dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Aceite                                  6 L"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"
-                android:layout_marginTop="7dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Azúcar                                10 kg"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"
-                android:layout_marginTop="7dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="Perecederos"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#38352E"
-                android:gravity="center_vertical"
-                android:layout_marginTop="18dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Pollo                                  12 kg"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Huevos                         2 cartones"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"
-                android:layout_marginTop="7dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Verduras mixtas                  8 kg"
-                android:gravity="center_vertical"
-                android:textSize="13sp"
-                android:textColor="#38352E"
-                android:background="@drawable/bg_card"
-                android:padding="12dp"
-                android:layout_marginTop="7dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+        android:layout_weight="1"
+        android:padding="18dp"
+        android:clipToPadding="false"/>
 
     <include
         layout="@layout/layout_barra_inferior"/>

@@ -4,6 +4,8 @@ import com.example.manipuladoraj.model.Ingrediente
 import com.example.manipuladoraj.model.UsuarioTurno
 import com.example.manipuladoraj.model.Turno
 import com.example.manipuladoraj.model.RecetaComponente
+import com.example.manipuladoraj.model.InventarioItem
+import com.example.manipuladoraj.model.MenuPae
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -20,4 +22,10 @@ interface ApiService {
 
     @GET("receta-componentes/")
     fun obtenerRecetaComponentes(): Call<List<RecetaComponente>>
+
+    @GET("inventario/")
+    fun obtenerInventario(): Call<List<InventarioItem>>
+
+    @GET("menus/")
+    fun obtenerMenus(): Call<List<MenuPae>>
 }

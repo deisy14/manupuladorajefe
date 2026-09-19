@@ -23,13 +23,11 @@ class InventarioActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         configurarBarraInferior()
-
-        // ¡Aquí llamamos al consumo de la API al abrir la pantalla!
         cargarInventarioRemoto()
     }
 
     private fun cargarInventarioRemoto() {
-        RetrofitClient.apiService.obtenerInventario()
+        RetrofitClient.getApiService(this).obtenerInventario()
             .enqueue(object : Callback<List<InventarioItem>> {
                 override fun onResponse(
                     call: Call<List<InventarioItem>>,
@@ -44,11 +42,24 @@ class InventarioActivity : AppCompatActivity() {
                             "Inventario cargado: ${lista?.size ?: 0} ítems",
                             Toast.LENGTH_SHORT
                         ).show()
+
+
+                        if (lista != null) {
+
+                        }
+
                     } else {
                         Log.e("API_INVENTARIO", "Error HTTP: ${response.code()}")
+
+                        val mensaje = if (response.code() == 401) {
+                            "Sesión expirada o no autorizada (401)"
+                        } else {
+                            "Error al cargar inventario: ${response.code()}"
+                        }
+
                         Toast.makeText(
                             this@InventarioActivity,
-                            "Error al cargar inventario",
+                            mensaje,
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -66,9 +77,7 @@ class InventarioActivity : AppCompatActivity() {
     }
 
     private fun configurarBarraInferior() {
-
-        // INICIO
-        findViewById<android.view.View>(R.id.navInicio).setOnClickListener {
+        binding.root.findViewById<android.view.View>(R.id.navInicio)?.setOnClickListener {
             startActivity(
                 Intent(
                     this,
@@ -77,13 +86,11 @@ class InventarioActivity : AppCompatActivity() {
             )
         }
 
-        // INVENTARIO
-        findViewById<android.view.View>(R.id.navInventario).setOnClickListener {
-            // Ya estamos en Inventario
+
+        binding.root.findViewById<android.view.View>(R.id.navInventario)?.setOnClickListener {
         }
 
-        // PREPARACIONES
-        findViewById<android.view.View>(R.id.navPreparaciones).setOnClickListener {
+        binding.root.findViewById<android.view.View>(R.id.navPreparaciones)?.setOnClickListener {
             startActivity(
                 Intent(
                     this,
@@ -92,8 +99,7 @@ class InventarioActivity : AppCompatActivity() {
             )
         }
 
-        // MANIPULADORAS
-        findViewById<android.view.View>(R.id.navManipuladoras).setOnClickListener {
+        binding.root.findViewById<android.view.View>(R.id.navManipuladoras)?.setOnClickListener {
             startActivity(
                 Intent(
                     this,
@@ -102,9 +108,7 @@ class InventarioActivity : AppCompatActivity() {
             )
         }
 
-        // PERFIL
-        findViewById<android.view.View>(R.id.navPerfil).setOnClickListener {
-            // Perfil lo hacemos después.
+        binding.root.findViewById<android.view.View>(R.id.navPerfil)?.setOnClickListener {
         }
     }
 }

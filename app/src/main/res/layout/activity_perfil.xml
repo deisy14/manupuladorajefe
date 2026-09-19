@@ -207,7 +207,6 @@
     </ScrollView>
 
 
-    <!-- BARRA INFERIOR -->
     <include
         layout="@layout/layout_barra_inferior"/>
 
