@@ -1,3 +1,4 @@
+
 package com.example.manipuladoraj
 
 import android.content.Intent
@@ -20,7 +21,7 @@ class MenuDiarioActivity : AppCompatActivity() {
     // Posición actual del carrusel
     private var posicionPlato = 0
 
-    // Platos del carrusel
+    // Imágenes de los platos
     private val imagenesPlatos = intArrayOf(
         R.drawable.frijoles,
         R.drawable.frijoles,
@@ -29,6 +30,7 @@ class MenuDiarioActivity : AppCompatActivity() {
         R.drawable.frijoles
     )
 
+    // Nombres de los platos
     private val nombresPlatos = arrayOf(
         "Frijoles",
         "Frijoles",
@@ -48,42 +50,64 @@ class MenuDiarioActivity : AppCompatActivity() {
         configurarBarraInferior()
         configurarNotificacion()
 
-        // Llamada a la API de menús agregada aquí
+        // Cargar los menús desde el backend
         cargarMenusRemotos()
     }
 
     // ---------------------------------------------------------
-    // CONSUMO DE LA API (MENÚS)
+    // CONSUMO DE LA API DE MENÚS
     // ---------------------------------------------------------
 
     private fun cargarMenusRemotos() {
-        RetrofitClient.apiService.obtenerMenus()
+
+        RetrofitClient.getApiService(this)
+            .obtenerMenus()
             .enqueue(object : Callback<List<MenuPae>> {
+
                 override fun onResponse(
                     call: Call<List<MenuPae>>,
                     response: Response<List<MenuPae>>
                 ) {
                     if (response.isSuccessful) {
+
                         val listaMenus = response.body()
-                        Log.d("API_MENUS", "Menús recibidos: $listaMenus")
+
+                        Log.d(
+                            "API_MENUS",
+                            "Menús recibidos: $listaMenus"
+                        )
 
                         Toast.makeText(
                             this@MenuDiarioActivity,
                             "Menús cargados: ${listaMenus?.size ?: 0}",
                             Toast.LENGTH_SHORT
                         ).show()
+
                     } else {
-                        Log.e("API_MENUS", "Error HTTP: ${response.code()}")
+
+                        Log.e(
+                            "API_MENUS",
+                            "Error HTTP: ${response.code()} - ${response.message()}"
+                        )
+
                         Toast.makeText(
                             this@MenuDiarioActivity,
-                            "Error al cargar menús",
+                            "Error al cargar menús: ${response.code()}",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
 
-                override fun onFailure(call: Call<List<MenuPae>>, t: Throwable) {
-                    Log.e("API_MENUS", "Error de conexión: ${t.message}", t)
+                override fun onFailure(
+                    call: Call<List<MenuPae>>,
+                    t: Throwable
+                ) {
+                    Log.e(
+                        "API_MENUS",
+                        "Error de conexión: ${t.message}",
+                        t
+                    )
+
                     Toast.makeText(
                         this@MenuDiarioActivity,
                         "Error de conexión con el servidor",
@@ -94,7 +118,7 @@ class MenuDiarioActivity : AppCompatActivity() {
     }
 
     // ---------------------------------------------------------
-    // DESAYUNO / ALMUERZO
+    // BOTONES DE DESAYUNO Y ALMUERZO
     // ---------------------------------------------------------
 
     private fun configurarBotonesComida() {
@@ -160,7 +184,7 @@ class MenuDiarioActivity : AppCompatActivity() {
         binding.tvPlatoSeleccionado.text =
             nombresPlatos[posicionPlato]
 
-        // Actualiza las imágenes laterales
+        // Calcular las posiciones de las imágenes laterales
         val posicionAnterior =
             if (posicionPlato == 0) {
                 imagenesPlatos.size - 1
@@ -185,24 +209,24 @@ class MenuDiarioActivity : AppCompatActivity() {
     }
 
     // ---------------------------------------------------------
-    // NOTIFICACIÓN
+    // NOTIFICACIONES
     // ---------------------------------------------------------
 
     private fun configurarNotificacion() {
 
         binding.btnNotificacion.setOnClickListener {
-            // Por ahora no abre otra pantalla.
+            // Pendiente de implementar la pantalla de notificaciones.
         }
     }
 
     // ---------------------------------------------------------
-    // BARRA INFERIOR
+    // BARRA DE NAVEGACIÓN INFERIOR
     // ---------------------------------------------------------
 
     private fun configurarBarraInferior() {
 
         findViewById<View>(R.id.navInicio).setOnClickListener {
-            // Ya estamos en Inicio
+            // Ya estamos en la pantalla de inicio.
         }
 
         findViewById<View>(R.id.navInventario).setOnClickListener {
@@ -233,7 +257,7 @@ class MenuDiarioActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
-            // Pendiente de crear la pantalla Perfil
+            // Pendiente de crear la pantalla de perfil.
         }
     }
 }

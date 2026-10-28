@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "http://10.0.2.2:8000/" // Cambia por tu IP o URL de Render si aplica
+    private const val BASE_URL = "https://backend-sirae-t9zi.onrender.com/api/"
 
     fun getApiService(context: Context): ApiService {
         // Interceptor para agregar el token automáticamente en cada petición

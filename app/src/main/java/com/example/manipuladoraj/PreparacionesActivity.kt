@@ -1,3 +1,4 @@
+
 package com.example.manipuladoraj
 
 import android.content.Intent
@@ -27,9 +28,14 @@ class PreparacionesActivity : AppCompatActivity() {
         cargarIngredientes()
     }
 
+    // ---------------------------------------------------------
+    // CARGAR INGREDIENTES DESDE EL BACKEND
+    // ---------------------------------------------------------
+
     private fun cargarIngredientes() {
 
-        RetrofitClient.apiService.obtenerIngredientes()
+        RetrofitClient.getApiService(this)
+            .obtenerIngredientes()
             .enqueue(object : Callback<List<Ingrediente>> {
 
                 override fun onResponse(
@@ -56,12 +62,12 @@ class PreparacionesActivity : AppCompatActivity() {
 
                         Log.e(
                             "API_INGREDIENTES",
-                            "Error HTTP: ${response.code()}"
+                            "Error HTTP: ${response.code()} - ${response.message()}"
                         )
 
                         Toast.makeText(
                             this@PreparacionesActivity,
-                            "Error al cargar ingredientes",
+                            "Error al cargar ingredientes: ${response.code()}",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -87,6 +93,10 @@ class PreparacionesActivity : AppCompatActivity() {
             })
     }
 
+    // ---------------------------------------------------------
+    // BARRA DE NAVEGACIÓN INFERIOR
+    // ---------------------------------------------------------
+
     private fun configurarBarraInferior() {
 
         findViewById<View>(R.id.navInicio).setOnClickListener {
@@ -102,7 +112,7 @@ class PreparacionesActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPreparaciones).setOnClickListener {
-            // Ya estamos en Preparaciones
+            // Ya estamos en Preparaciones.
         }
 
         findViewById<View>(R.id.navManipuladoras).setOnClickListener {
@@ -112,7 +122,7 @@ class PreparacionesActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.navPerfil).setOnClickListener {
-            // Pendiente
+            // Pendiente de implementar la pantalla de perfil.
         }
     }
 }
