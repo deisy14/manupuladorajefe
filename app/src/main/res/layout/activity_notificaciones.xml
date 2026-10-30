@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notificaciones"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <EditText
+        android:id="@+id/edtTituloNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de la notificación"
+        android:inputType="textCapSentences"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/edtMensajeNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe el mensaje"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="2"
+        android:gravity="top|start" />
+
+    <Button
+        android:id="@+id/btnEnviarNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar notificación" />
+
+    <Button
+        android:id="@+id/btnMarcarTodasLeidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marcar todas como leídas" />
+
+    <TextView
+        android:id="@+id/txtEstadoNotificaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargando notificaciones..."
+        android:padding="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/contenedorNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</LinearLayout>
+

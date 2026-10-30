@@ -215,7 +215,7 @@ class MenuDiarioActivity : AppCompatActivity() {
     private fun configurarNotificacion() {
 
         binding.btnNotificacion.setOnClickListener {
-            // Pendiente de implementar la pantalla de notificaciones.
+            startActivity(Intent(this, NotificacionesActivity::class.java))
         }
     }
 
@@ -252,6 +252,15 @@ class MenuDiarioActivity : AppCompatActivity() {
                 Intent(
                     this,
                     ManipuladorasActivity::class.java
+                )
+            )
+        }
+
+        findViewById<View>(R.id.navAvisos).setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    NotificacionesActivity::class.java
                 )
             )
         }

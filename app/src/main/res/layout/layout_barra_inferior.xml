@@ -158,6 +158,31 @@
             android:layout_gravity="center_vertical"
             android:background="#F6C800"/>
 
+        <!-- AVISOS -->
+        <LinearLayout
+            android:id="@+id/navAvisos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_notificacion"
+                android:contentDescription="Avisos" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avisos"
+                android:textSize="10sp"
+                android:textColor="#38352E"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
 
         <!-- PERFIL -->
         <LinearLayout

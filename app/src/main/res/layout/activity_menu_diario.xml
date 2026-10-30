@@ -36,7 +36,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_notificacion"
-        app:tint="#FFFFFF"
+        app:tint="#38352E"
         app:layout_constraintTop_toTopOf="@id/tvSaludo"
         app:layout_constraintBottom_toBottomOf="@id/tvFecha"
         app:layout_constraintEnd_toEndOf="parent"
