@@ -12,6 +12,10 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Body
 import retrofit2.http.Path
+import retrofit2.http.Multipart
+import retrofit2.http.Part
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 data class LoginRequest(
     val correo: String,
@@ -27,6 +31,12 @@ data class LoginResponse(
     val access: String,
     val refresh: String?,
     val usuario: com.google.gson.JsonObject?
+)
+
+data class Destinatario(
+    val id_usuario: Int,
+    val nombre: String = "",
+    val rol: String = ""
 )
 
 interface ApiService {
@@ -52,7 +62,7 @@ interface ApiService {
     @GET("menus/")
     fun obtenerMenus(): Call<List<MenuPae>>
 
-        @GET("notificaciones/")
+    @GET("notificaciones/")
     fun obtenerNotificaciones(): Call<List<Notificacion>>
 
     @POST("notificaciones/enviar/")
@@ -67,6 +77,18 @@ interface ApiService {
 
     @POST("notificaciones/marcar-todas-leidas/")
     fun marcarTodasLeidas(): Call<com.google.gson.JsonObject>
+
+    @Multipart
+    @POST("notificaciones/enviar/")
+    fun enviarNotificacionConImagen(
+        @Part("titulo") titulo: RequestBody,
+        @Part("mensaje") mensaje: RequestBody,
+        @Part("id_destinatario") idDestinatario: RequestBody?,
+        @Part imagen: MultipartBody.Part?
+    ): Call<com.google.gson.JsonObject>
+
+    @GET("notificaciones/destinatarios/")
+    fun obtenerDestinatarios(): Call<List<Destinatario>>
 }
 
    

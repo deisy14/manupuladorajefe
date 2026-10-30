@@ -30,6 +30,25 @@
         android:minLines="2"
         android:gravity="top|start" />
 
+    <Spinner
+        android:id="@+id/spnDestinatario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnAdjuntarImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adjuntar imagen" />
+
+    <TextView
+        android:id="@+id/txtImagenElegida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sin imagen adjunta"
+        android:paddingBottom="4dp" />
+
     <Button
         android:id="@+id/btnEnviarNotificacion"
         android:layout_width="match_parent"
