@@ -1,21 +1,25 @@
 package com.example.manipuladoraj.api
 
 import com.example.manipuladoraj.model.Ingrediente
+import com.example.manipuladoraj.model.DetallePlato
+import com.example.manipuladoraj.model.Plato
 import com.example.manipuladoraj.model.UsuarioTurno
 import com.example.manipuladoraj.model.Turno
 import com.example.manipuladoraj.model.RecetaComponente
 import com.example.manipuladoraj.model.InventarioItem
 import com.example.manipuladoraj.model.MenuPae
 import com.example.manipuladoraj.model.Notificacion
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Body
-import retrofit2.http.Path
-import retrofit2.http.Multipart
-import retrofit2.http.Part
+import com.example.manipuladoraj.model.SugerenciaRecetaRequest
+import com.example.manipuladoraj.model.SugerenciaRecetaResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Multipart
+import retrofit2.http.POST
+import retrofit2.http.Part
+import retrofit2.http.Path
 
 data class LoginRequest(
     val correo: String,
@@ -62,6 +66,17 @@ interface ApiService {
     @GET("menus/")
     fun obtenerMenus(): Call<List<MenuPae>>
 
+    @GET("detalle_plato/")
+    fun obtenerDetallesPlato(): Call<List<DetallePlato>>
+
+    @GET("platos/")
+    fun obtenerPlatos(): Call<List<Plato>>
+
+    @POST("ia/sugerencias-recetas/")
+    fun sugerirReceta(
+        @Body datos: SugerenciaRecetaRequest
+    ): Call<SugerenciaRecetaResponse>
+
     @GET("notificaciones/")
     fun obtenerNotificaciones(): Call<List<Notificacion>>
 
@@ -69,14 +84,6 @@ interface ApiService {
     fun enviarNotificacion(
         @Body datos: EnviarNotificacionRequest
     ): Call<com.google.gson.JsonObject>
-
-    @POST("notificaciones/{id}/marcar-leida/")
-    fun marcarNotificacionLeida(
-        @Path("id") id: Int
-    ): Call<com.google.gson.JsonObject>
-
-    @POST("notificaciones/marcar-todas-leidas/")
-    fun marcarTodasLeidas(): Call<com.google.gson.JsonObject>
 
     @Multipart
     @POST("notificaciones/enviar/")
@@ -89,6 +96,12 @@ interface ApiService {
 
     @GET("notificaciones/destinatarios/")
     fun obtenerDestinatarios(): Call<List<Destinatario>>
-}
 
-   
+    @POST("notificaciones/{id}/marcar-leida/")
+    fun marcarNotificacionLeida(
+        @Path("id") id: Int
+    ): Call<com.google.gson.JsonObject>
+
+    @POST("notificaciones/marcar-todas-leidas/")
+    fun marcarTodasLeidas(): Call<com.google.gson.JsonObject>
+}

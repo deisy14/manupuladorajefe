@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://backend-sirae-pyim.onrender.com/api/"
+    private const val BASE_URL = "https://backend-sirae-t9zi.onrender.com/api/"
 
     fun getApiService(context: Context): ApiService {
         // Interceptor para agregar el token automáticamente en cada petición
@@ -29,6 +29,9 @@ object RetrofitClient {
 
         val client = OkHttpClient.Builder()
             .addInterceptor(authInterceptor)
+            .connectTimeout(90, java.util.concurrent.TimeUnit.SECONDS)
+            .readTimeout(90, java.util.concurrent.TimeUnit.SECONDS)
+            .writeTimeout(90, java.util.concurrent.TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()

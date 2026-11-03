@@ -120,25 +120,26 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvSugerencias"
+        <Button
+            android:id="@+id/btnSugerenciaIa"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sugerencias de IA para hoy ⓘ"
-            android:textColor="#344054"
+            android:layout_height="40dp"
+            android:text="Sugerencia IA"
+            android:textColor="#1D2939"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:backgroundTint="#FFC107"
             app:layout_constraintTop_toBottomOf="@id/layoutBotonesComida"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
 
         <!-- SECCION DE CARRUSEL -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/carruselContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvSugerencias"
+            app:layout_constraintTop_toBottomOf="@id/btnSugerenciaIa"
             android:layout_marginTop="4dp"
             android:paddingHorizontal="16dp">
 
